@@ -8,9 +8,12 @@ import { PizzaAppComponent } from './pizza-app/pizza-app.component';
 import { SizePipe } from './shared/pipes/size.pipe';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, PizzaAppComponent, SizePipe],
-  imports: [BrowserModule, AppRoutingModule],
-  providers: [],
-  bootstrap: [AppComponent],
+    declarations: [AppComponent, HomeComponent, PizzaAppComponent, SizePipe],
+    imports: [BrowserModule, AppRoutingModule],
+    providers: [],
+    bootstrap: [AppComponent],
+    exports: [
+        SizePipe
+    ]
 })
 export class AppModule {}
