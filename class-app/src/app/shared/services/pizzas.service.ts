@@ -1,7 +1,5 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { PizzaEntity } from 'api/lib/api-interfaces';
-import { Observable, map } from 'rxjs';
+// pizzas.service.ts
+import {PizzaEntity} from "../../../../api/lib/api-interfaces";
 
 interface PizzaResponse {
   msg: string;
@@ -14,9 +12,13 @@ interface PizzaResponse {
 export class PizzasService {
   constructor(private http: HttpClient) {}
 
-  getPizzaPresets(): Observable<PizzaEntity[]> {
+  getPizzas(): Observable<PizzaEntity[]> {
     return this.http
-      .get<PizzaResponse>('/api/pizzas/presets')
-      .pipe(map((data) => data.pizzas));
+      .get<PizzaResponse>('/api/pizzas')
+      .pipe(map((data: { pizzas: any; }) => data.pizzas));
   }
+}
+
+function Injectable(arg0: { providedIn: string; }): (target: typeof PizzasService) => void | typeof PizzasService {
+    throw new Error("Function not implemented.");
 }
