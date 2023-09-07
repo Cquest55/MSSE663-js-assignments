@@ -38,7 +38,7 @@ $ npm install -g @angular/cli
 2. In a project folder of your choice, we'll need to generate a new Angular application:
 
 ```bash
-$ ng new class-app
+$ ng new class-appUpdate
 ```
 
 > For the purposes of this class, we'll call this `class-app`.
